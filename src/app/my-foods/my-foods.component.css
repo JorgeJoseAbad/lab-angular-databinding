@@ -6,3 +6,20 @@ p {
   width: 200px;
   height: auto;
 }
+
+.submitted{
+  background-color: #c9e0f7;
+  width: 150px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.search{
+  background-color: #eacdcd;
+  font-style: normal;
+  font-family: monospace;
+  color:blue;
+  width: 300px;
+  padding: 20px;
+  align-self: center;
+}
