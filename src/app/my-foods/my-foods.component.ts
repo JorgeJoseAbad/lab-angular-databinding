@@ -8,14 +8,24 @@ import foods from '../foods';
 })
 export class MyFoodsComponent implements OnInit {
   foods:Object[];
+  newFood:Object={};
 
   constructor() { }
 
   ngOnInit() {
     this.foods=foods;
   }
+  submitted = false;
 
-  /* anado aqui el array con comidas*/
+
+
+  newFoods(){
+    console.log('botton new food tocado');
+    this.foods.push(this.newFood);
+    this.newFood={};
+    this.submitted = true;
+
+  }
 
 
 }

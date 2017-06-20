@@ -1,6 +1,29 @@
 <p>
   my-foods works! (de chiripa pero works...)!
 </p>
+<div [hidden]="submitted">
+    <div>
+      <label for="food-name">food-name</label>
+      <input type="text" [(ngModel)]="newFood.name">
+    </div>
+    <div>
+      <label for="food-calories">food-calories</label>
+      <input type="text" [(ngModel)]="newFood.calories">
+    </div>
+    <div>
+      <label for="food-image">food-image</label>
+      <input type="text" [(ngModel)]="newFood.image">
+    </div>
+    <div>
+      <label for="food-quantity">quantity</label>
+      <input type="text" [(ngModel)]="newFood.quantity">
+    </div>
+
+    <button (click)="newFoods()">add new Food</button>
+</div>
+
+
+
 <div class="search">
   <label for="search">searchByName</label>
   <input type="text" [(ngModel)]="search">
@@ -13,20 +36,23 @@
     </li>
   </ul>
 
-<ul>
-  <li *ngFor="let food of foods">
-    <h3> Nombre: {{ food.name }} </h3>
-    <img class="food" src="{{ food.image }}">
-    <br>
-    <span> Tiene: {{ food.calories }} calorias/gramo</span>
 
-    <span div="fat" *ngIf="food.calories>400"> Esto engorda!!!</span>
-    <br>
-    <label>Cuantos gramos quieres?</label>
-    <input [(ngModel)]="cantidad">
+<div class="food">
+  <ul>
+    <li *ngFor="let food of foods">
+      <h3> Nombre: {{ food.name }} </h3>
+      <img class="food" src="{{ food.image }}">
+      <br>
+      <span> Tiene: {{ food.calories }} calorias/gramo</span>
 
-        <div class="aviso"> tomas {{cantidad}}*{{food.calories}}={{cantidad*food.calories}}!
-          calorias, loco!!!!
-        </div>
- </li>
- </ul>
+      <span div="fat" *ngIf="food.calories>400"> Esto engorda!!!</span>
+      <br>
+      <label>Cuantos gramos quieres?</label>
+      <input [(ngModel)]="cantidad">
+
+          <div class="aviso"> tomas {{cantidad}}*{{food.calories}}={{cantidad*food.calories}}!
+            calorias, loco!!!!
+          </div>
+   </li>
+   </ul>
+ </div>
