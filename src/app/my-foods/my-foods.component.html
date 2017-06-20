@@ -1,6 +1,19 @@
 <p>
   my-foods works! (de chiripa pero works...)!
 </p>
+<div class="search">
+  <label for="search">searchByName</label>
+  <input type="text" [(ngModel)]="search">
+</div>
+
+  <ul>
+    <li *ngFor="let item of foods | searchByName:'name':search;let i = index">
+      <span>{{item.name}}</span>
+      <span>{{item.calories}}</span>
+    </li>
+  </ul>
+
+<ul>
   <li *ngFor="let food of foods">
     <h3> Nombre: {{ food.name }} </h3>
     <img class="food" src="{{ food.image }}">
@@ -16,3 +29,4 @@
           calorias, loco!!!!
         </div>
  </li>
+ </ul>
