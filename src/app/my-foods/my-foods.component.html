@@ -1,9 +1,18 @@
 <p>
   my-foods works! (de chiripa pero works...)!
+</p>
   <li *ngFor="let food of foods">
     <h3> Nombre: {{ food.name }} </h3>
     <img class="food" src="{{ food.image }}">
     <br>
-    <span> Tiene: {{ food.calories }} calorias</span>
+    <span> Tiene: {{ food.calories }} calorias/gramo</span>
+
+    <span div="fat" *ngIf="food.calories>400"> Esto engorda!!!</span>
+    <br>
+    <label>Cuantos gramos quieres?</label>
+    <input [(ngModel)]="cantidad">
+
+        <div class="aviso"> tomas {{cantidad}}*{{food.calories}}={{cantidad*food.calories}}!
+          calorias, loco!!!!
+        </div>
  </li>
-</p>
