@@ -5,13 +5,13 @@
       <input type="text" [(ngModel)]="newFood.name">
 
       <label for="food-calories">food-calories</label>
-      <input type="text" [(ngModel)]="newFood.calories">
+      <input type="number" [(ngModel)]="newFood.calories">
 
       <label for="food-image">food-image</label>
       <input type="text" [(ngModel)]="newFood.image">
 
       <label for="food-quantity">quantity</label>
-      <input type="text" [(ngModel)]="newFood.quantity">
+      <input type="number" [(ngModel)]="newFood.quantity">
 
     <button (click)="newFoods()">add new Food</button>
 </div>
