@@ -11,7 +11,6 @@ export class MyFoodsComponent implements OnInit {
   foods:Object[];
   newFood:Object={};
   submitted = false;
-  cantidad: number = 0;
 
   constructor() { }
 
