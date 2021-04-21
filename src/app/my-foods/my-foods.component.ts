@@ -9,12 +9,7 @@ import foods from '../foods';
 export class MyFoodsComponent implements OnInit {
 
   foods:Object[];
-  newFood = {
-    name: "",
-    calories: 0,
-    quantity: 0,
-    image:""
-  };
+  newFood:Object={};
   submitted = false;
   cantidad: number = 0;
 
@@ -28,20 +23,8 @@ export class MyFoodsComponent implements OnInit {
   newFoods(){
     console.log('botton new food tocado');
 
-    let myFood = {
-      name: this.newFood.name,
-      calories: +this.newFood.calories,
-      quantity: +this.newFood.quantity,
-      image: this.newFood.image
-    };
-
-    this.foods.push(myFood);
-    this.newFood={
-      name: "",
-      calories: 0,
-      quantity: 0,
-      image: ""
-    };
+    this.foods.push(this.newFood);
+    this.newFood={};
     this.submitted = true;
 
   }
