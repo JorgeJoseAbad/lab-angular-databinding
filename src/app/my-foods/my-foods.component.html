@@ -1,6 +1,4 @@
-<p>
-  my-foods works! (de chiripa pero works...)!
-</p>
+
 <div [ngClass]="{submitted:true}" [hidden]="submitted">
 
       <label for="food-name">food-name</label>
@@ -14,7 +12,6 @@
 
       <label for="food-quantity">quantity</label>
       <input type="text" [(ngModel)]="newFood.quantity">
-
 
     <button (click)="newFoods()">add new Food</button>
 </div>
@@ -42,13 +39,13 @@
       <br>
       <span> Tiene: {{ food.calories }} calorias/gramo</span>
 
-      <span div="fat" *ngIf="food.calories>400"> Esto engorda!!!</span>
+      <span div="fat" *ngIf="+food.calories>400"> Esto engorda!!!</span>
       <br>
       <label>Cuantos gramos quieres?</label>
-      <input [(ngModel)]="cantidad">
+      <input [(ngModel)]="food.quantity">
 
-          <div class="aviso"> tomas {{cantidad}}*{{food.calories}}={{cantidad*food.calories}}!
-            calorias, loco!!!!
+          <div class="aviso"> tomas {{food.quantity}}*{{+food.calories}}={{food.quantity*+food.calories}}!
+            calorias!!!!
           </div>
    </li>
    </ul>

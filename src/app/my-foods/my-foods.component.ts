@@ -7,25 +7,42 @@ import foods from '../foods';
   styleUrls: ['./my-foods.component.css']
 })
 export class MyFoodsComponent implements OnInit {
+
   foods:Object[];
-  newFood:Object={};
+  newFood = {
+    name: "",
+    calories: 0,
+    quantity: 0,
+    image:""
+  };
+  submitted = false;
+  cantidad: number = 0;
 
   constructor() { }
 
   ngOnInit() {
-    this.foods=foods;
+    this.foods = foods;
   }
-  submitted = false;
-
 
 
   newFoods(){
     console.log('botton new food tocado');
-    this.foods.push(this.newFood);
-    this.newFood={};
+
+    let myFood = {
+      name: this.newFood.name,
+      calories: +this.newFood.calories,
+      quantity: +this.newFood.quantity,
+      image: this.newFood.image
+    };
+
+    this.foods.push(myFood);
+    this.newFood={
+      name: "",
+      calories: 0,
+      quantity: 0,
+      image: ""
+    };
     this.submitted = true;
 
   }
-
-
 }
